@@ -1,2 +1,3 @@
 # Yogi-Oasis
-![alt text](image.png)
+
+Design justifications
