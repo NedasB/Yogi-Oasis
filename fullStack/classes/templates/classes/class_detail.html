@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Header content can go here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Single class display -->
+        <div class="col-md-4 text-center mb-4">
+            <img src="{{ lesson.instructor_image.url }}" alt="{{ lesson.instructor_name }}" class="img-fluid rounded-circle" style="width: 300px;">
+        </div>
+        <div class="col-md-7">
+            <h2 class="mb-3">{{ lesson.title }}</h2>
+            <p><b>Description:</b></p>
+            <p>{{ lesson.long_description }}</p>
+            <p><b>Run by:</b> {{ lesson.instructor_name }}</p>
+            <p><b>Location:</b> {{ lesson.location }}</p>
+            <p><b>Date:</b> {{ lesson.date|date:"F d, Y" }}</p>
+            <p><b>Time:</b> {{ lesson.start_time|date:"g:i A" }} - {{ lesson.finish_time|date:"g:i A" }}</p>
+            <p><b>Duration:</b> {{ lesson.duration }} minutes</p>
+            <p><b>Capacity:</b> {{ lesson.current_capacity }} / {{ lesson.max_capacity }}</p>
+            <p><b>Price:</b> £{{ lesson.cost }}</p>
+        </div>
+    </div>
+</div>
+ <!-- Form to select and submit lesson + spaces -->
+<form class="form mt-4" action="{% url 'add_to_cart' lesson.class_id %}" method="POST">
+    {% csrf_token %}
+    <div class="form-row justify-content-center">
+        <div class="col-auto">
+            <p><strong>Select Spaces</strong></p>
+            <div class="form-group">
+                <input type="number" class="form-control qty_input" name="quantity" value="1" min="1" max="{{ lesson.max_capacity }}" aria-label="Quantity">
+            </div>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="col-auto">
+            <a href="{% url 'classes' %}" class="btn btn-outline-black btn-lg rounded-0 mt-2">
+                <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Classes</span>
+            </a>
+            <input type="submit" class="btn btn-black btn-lg rounded-0 mt-2 text-uppercase" value="Select booking">
+        </div>
+    </div>
+    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+</form>
+{% endblock %}

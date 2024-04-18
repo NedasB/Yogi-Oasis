@@ -1,0 +1,213 @@
+[
+    {
+        "model": "classes.lesson",
+        "pk": 1,
+        "fields": {
+            "class_id": "1",
+            "instructor_name": "Ava Green",
+            "introduction": "Ava Green, a certified yoga instructor with over a decade of experience, specializes in making yoga accessible to beginners. With a background in physical therapy, Ava brings a deep understanding of the human body to her classes, ensuring a safe and nurturing environment for all her students. Her approach to foundational yoga focuses on breath work and the precise execution of poses, making her classes a perfect starting point for those new to yoga or seeking to refine their practice.",
+            "instructor_image": "woman1.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-01",
+            "start_time": "08:00:00",
+            "finish_time": "09:00:00",
+            "title": "Foundational Yoga",
+            "description": "Beginner-friendly yoga focusing on foundational poses and breath work.",
+            "long_description": "Ava's Foundational Yoga class is meticulously designed for beginners, emphasizing the core principles of yoga, including breath work, alignment, and the foundational poses that form the bedrock of any yoga practice. Participants can expect a supportive and informative environment where individual attention is given to help everyone understand and perform each pose correctly. Ava's expertise in physical therapy enriches her classes, making this an ideal choice for those looking to start their yoga journey on the right foot, with an emphasis on safety and the therapeutic aspects of yoga.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 2,
+        "fields": {
+            "class_id": "2",
+            "instructor_name": "Liam Brown",
+            "introduction": "Liam Brown is a dynamic yoga instructor known for his energetic teaching style and deep knowledge of Vinyasa flow. With over eight years of teaching experience, Liam's classes are characterized by their focus on alignment and fluid movement, encouraging students to connect their breath with their movements. Liam's passion for yoga is infectious, making his classes both challenging and enjoyable.",
+            "instructor_image": "man1.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-01",
+            "start_time": "09:15:00",
+            "finish_time": "10:30:00",
+            "title": "Vinyasa Flow",
+            "description": "Vinyasa flow class with an emphasis on alignment and movement.",
+            "long_description": "Liam's Vinyasa Flow class is a fluid, dynamic exploration of yoga that synchronizes breath with movement, designed to build strength, flexibility, and balance. This class emphasizes smooth transitions and alignment, encouraging students to deepen their practice through mindfulness and physical engagement. Ideal for those looking to elevate their practice, participants will leave feeling energized and invigorated, with a deeper connection between mind, body, and spirit.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 3,
+        "fields": {
+            "class_id": "3",
+            "instructor_name": "Emma Wilson",
+            "introduction": "Emma Wilson is a highly experienced yoga teacher with a specialty in Yin Yoga and Dynamic Flow. Her expertise lies in deep stretching and relaxation techniques, offering a slow-paced yet profound practice in her Yin Yoga Deep Stretch classes. Additionally, Emma's Dynamic Flow classes are known for their creativity and use of music, providing a rejuvenating and spirited environment. With a compassionate approach, Emma guides her students toward achieving balance and mindfulness.",
+            "instructor_image": "woman2.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-01",
+            "start_time": "10:45:00",
+            "finish_time": "12:15:00",
+            "title": "Yin Yoga Deep Stretch",
+            "description": "Slow-paced Yin yoga for deep stretching and relaxation.",
+            "long_description": "Emma's Yin Yoga Deep Stretch class offers a meditative experience focused on deep tissue stretching, relaxation, and mindfulness. By holding poses for longer periods, this class encourages a deeper release, promoting flexibility and a sense of peace and relaxation. Emma's nurturing guidance helps participants explore their boundaries and encourages a gentle but profound journey inward, making it perfect for those seeking to unwind and release tension.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 4,
+        "fields": {
+            "class_id": "4",
+            "instructor_name": "Noah Harris",
+            "introduction": "Noah Harris, with his extensive training in Hatha yoga, focuses on building strength and flexibility through mindfulness and meditation. His approach integrates traditional Hatha yoga principles with modern fitness techniques, making his classes suitable for a wide range of abilities. Noah's dedication to yoga as a holistic practice for physical and mental wellness is evident in his attentive teaching style.",
+            "instructor_image": "man2.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-01",
+            "start_time": "12:30:00",
+            "finish_time": "13:30:00",
+            "title": "Hatha Yoga Strength",
+            "description": "Hatha yoga class focusing on strength, flexibility, and meditation.",
+            "long_description": "Noah's Hatha Yoga Strength class combines traditional yoga poses with strength-building techniques to create a balanced and comprehensive workout. This class focuses on enhancing flexibility, muscle tone, and mental focus through meditation and breathing exercises. Suitable for all levels, Noah's approachable method ensures that each student can progress at their own pace, fostering a sense of achievement and physical well-being.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 5,
+        "fields": {
+            "class_id": "5",
+            "instructor_name": "Mia Clark",
+            "introduction": "Mia Clark is renowned for her vibrant and challenging Power Yoga classes. As a competitive athlete turned yoga instructor, Mia brings a unique perspective to her teaching, emphasizing strength, endurance, and flexibility. Her Power Yoga Challenge classes are designed for those looking to push their limits and explore their potential, all within a supportive and motivating environment.",
+            "instructor_image": "woman3.jpg",
+            "duration": 60,
+            "cost": 10,
+            "location": "Main Studio",
+            "date": "2024-04-01",
+            "start_time": "13:45:00",
+            "finish_time": "15:00:00",
+            "title": "Power Yoga Challenge",
+            "description": "Power yoga session for those looking to challenge themselves.",
+            "long_description": "Mia's Power Yoga Challenge class is a high-energy, fast-paced workout designed to build strength, endurance, and flexibility. This class combines dynamic movements with breath work to create a challenging and invigorating experience that will leave participants feeling empowered and energized. Mia's motivational teaching style encourages students to push their limits and discover their inner strength, making this class ideal for those looking to take their practice to the next level.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 6,
+        "fields": {
+            "class_id": "6",
+            "instructor_name": "Jacob Lewis",
+            "introduction": "Jacob Lewis, an Ashtanga yoga specialist, offers an intense practice aimed at intermediate to advanced students. His background in sports science and personal training complements his yoga instruction, providing a comprehensive approach to physical fitness and recovery. Jacob's classes, including Ashtanga Intermediate and Athlete Yoga Recovery, focus on enhancing athletic performance, strength, flexibility, and recovery.",
+            "instructor_image": "man3.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-02",
+            "start_time": "08:00:00",
+            "finish_time": "09:30:00",
+            "title": "Ashtanga Intermediate",
+            "description": "Ashtanga yoga for intermediate to advanced students.",
+            "long_description": "Jacob's Ashtanga Intermediate class is a rigorous session aimed at those with a solid foundation in yoga, looking to explore the challenging Ashtanga method. This class focuses on the precise sequence of poses, breath control, and the energetic aspects of the practice. Jacob's expertise in integrating yoga with athletic training provides a unique perspective, making this class ideal for those seeking to deepen their practice and enhance physical performance.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 7,
+        "fields": {
+            "class_id": "7",
+            "instructor_name": "Sophia Martinez",
+            "introduction": "Sophia Martinez is a restorative yoga instructor with a gentle touch and a deep passion for healing through yoga. With a background in holistic health, Sophia's Restorative Healing classes are designed to release stress and tension, promoting relaxation and self-care. Her empathetic and nurturing approach creates a safe space for students to explore their practice and find inner peace.",
+            "instructor_image": "woman4.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-02",
+            "start_time": "09:45:00",
+            "finish_time": "10:45:00",
+            "title": "Restorative Healing",
+            "description": "Restorative yoga class focusing on relaxation and healing.",
+            "long_description": "Sophia's Restorative Healing class is a gentle, nurturing practice designed to promote relaxation, healing, and stress relief. This class uses props to support the body in restful poses, allowing participants to release tension and find deep relaxation. Sophia's soothing guidance and calming presence create a safe space for students to unwind and rejuvenate, making this class ideal for those seeking to restore balance and harmony in their lives.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 8,
+        "fields": {
+            "class_id": "8",
+            "instructor_name": "Emma Wilson",
+            "introduction": "Emma Wilson is a highly experienced yoga teacher with a specialty in Yin Yoga and Dynamic Flow. Her expertise lies in deep stretching and relaxation techniques, offering a slow-paced yet profound practice in her Yin Yoga Deep Stretch classes. Additionally, Emma's Dynamic Flow classes are known for their creativity and use of music, providing a rejuvenating and spirited environment. With a compassionate approach, Emma guides her students toward achieving balance and mindfulness.",
+            "instructor_image": "woman2.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-02",
+            "start_time": "11:00:00",
+            "finish_time": "12:15:00",
+            "title": "Dynamic Flow",
+            "description": "Dynamic flow class with creative sequencing and music.",
+            "long_description": "Emma's Dynamic Flow class is a creative and energizing practice that combines dynamic movement with music to create a fun and invigorating experience. This class focuses on fluid transitions and creative sequencing, encouraging students to explore their practice with curiosity and joy. Emma's infectious enthusiasm and supportive teaching style make this class ideal for those looking to move, groove, and flow with the music.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 9,
+        "fields": {
+            "class_id": "9",
+            "instructor_name": "Jacob Lewis",
+            "introduction": "Jacob Lewis, an Ashtanga yoga specialist, offers an intense practice aimed at intermediate to advanced students. His background in sports science and personal training complements his yoga instruction, providing a comprehensive approach to physical fitness and recovery. Jacob's classes, including Ashtanga Intermediate and Athlete Yoga Recovery, focus on enhancing athletic performance, strength, flexibility, and recovery.",
+            "instructor_image": "man3.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-02",
+            "start_time": "12:30:00",
+            "finish_time": "14:00:00",
+            "title": "Athlete Yoga Recovery",
+            "description": "Yoga for athletes, focusing on strength, flexibility, and recovery.",
+            "long_description": "Jacob's Athlete Yoga Recovery class is designed to help athletes recover from intense training, improve flexibility, and prevent injury. This class combines yoga poses with strength-building exercises to create a balanced and effective workout that enhances performance and promotes recovery. Jacob's background in sports science and yoga therapy makes this class ideal for athletes of all levels looking to improve their physical and mental well-being.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    },
+    {
+        "model": "classes.lesson",
+        "pk": 10,
+        "fields": {
+            "class_id": "10",
+            "instructor_name": "Emma Wilson",
+            "introduction": "Emma Wilson is a highly experienced yoga teacher with a specialty in Yin Yoga and Dynamic Flow. Her expertise lies in deep stretching and relaxation techniques, offering a slow-paced yet profound practice in her Yin Yoga Deep Stretch classes. Additionally, Emma's Dynamic Flow classes are known for their creativity and use of music, providing a rejuvenating and spirited environment. With a compassionate approach, Emma guides her students toward achieving balance and mindfulness.",
+            "instructor_image": "woman2.jpg",
+            "duration": 60,
+            "cost": 15,
+            "location": "Main Studio",
+            "date": "2024-04-02",
+            "start_time": "14:15:00",
+            "finish_time": "15:15:00",
+            "title": "Gentle Yoga Mindfulness",
+            "description": "Gentle yoga class suitable for all levels, focusing on relaxation and breath.",
+            "long_description": "Emma's Gentle Yoga Mindfulness class is a soothing and accessible session suitable for all levels, emphasizing the connection between mind, body, and breath. This class focuses on gentle movements and breathing exercises to promote relaxation and mindfulness. Emma's compassionate approach and the peaceful environment make this class a refuge for those seeking to reduce stress, enhance mental clarity, and foster a deep sense of calm.",
+            "max_capacity": 10,
+            "current_capacity": 0
+        }
+    }
+]
+

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Header content can go here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<!-- Cart summary -->
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="mb-4">Currently in the cart:</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless table-align-middle">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Class</th>
+                            <th scope="col">With</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Spaces</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- List cart items -->
+                        {% for item in cart_items %}
+                        <tr>
+                            <td class="text-left align-middle no-padding">
+                                <p><strong>{{ item.lesson.title }}</strong></p>
+                            </td>
+                            <td class= "text-left align-middle no-padding">
+                                <p>{{ item.lesson.instructor_name }}</p>
+                            </td>
+                            <td class="text-left align-middle no-padding">  
+                                <p class="my-0">{{ item.lesson.location }}</p>
+                            </td>
+                            <td class="text-left align-middle no-padding">  
+                                <p class="my-0">{{ item.lesson.date|date:"F d, Y" }}</p>
+                            </td>
+                            <td class="text-left align-middle no-padding">  
+                                <p class="my-0">{{ item.lesson.start_time|date:"g:i A" }} - {{ item.lesson.finish_time|date:"g:i A" }}</p>
+                            </td>
+                            <td class="text-left align-middle no-padding">
+                                <p class="my-0">£{{ item.lesson.cost|floatformat:2 }}</p>
+                            </td>
+                            <td class="align-middle no-padding">
+                                <p class="my-0">{{ item.quantity }}</p>
+                            </td>
+                            <td class="align-middle no-padding">
+                                <p class="my-0">£{{ item.lesson.cost|calc_subtotal:item.quantity|floatformat:2 }}</p>
+                            </td>
+                            <td class="align-middle no-padding text-left">
+                                <form action="{% url 'remove_from_cart' item.lesson.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn" style="color: #17a2b8; background-color: transparent; border: none; padding-left:20px;">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                    <!-- Order total -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-right align-middle">
+                                <h6><strong>Final total: £{{ total|floatformat:2 }}</strong></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-right align-middle">
+                                <a href="{% url 'classes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Continue searching</span>
+                                </a>
+                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <span class="text-uppercase">Proceed to checkout</span>
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- Empty cart else -->
+            {% else %}
+            <p class="lead mb-5">Your cart is empty.</p>
+            <a href="{% url 'classes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Continue searching</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

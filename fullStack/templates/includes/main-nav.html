@@ -1,0 +1,34 @@
+<!-- Navigation -->
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'classes' %}" id="all-classes-link">
+                Classes
+            </a>    
+        </li>
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'coaches' %}" id="coaches-link">
+                Coaches
+            </a>            
+        </li>
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-classes-link" data-toggle="dropdown" >
+                News
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-classes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Extras
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-classes-link">
+                <a href="" class="dropdown-item">About us</a>
+                <a href="" class="dropdown-item">FAQs</a>
+                <a href="" class="dropdown-item">Contact us</a>
+                <a href="" class="dropdown-item">Terms & Conditions</a>
+                <a href="" class="dropdown-item">Privacy Policy</a>
+                <a href="" class="dropdown-item">Cookie Policy</a>
+            </div>
+        </li>
+    </ul>
+</div>
+        

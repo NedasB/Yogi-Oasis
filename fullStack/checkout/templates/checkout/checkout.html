@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Header content can go here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="mb-4">Checkout:</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p>Please fill out the following form to complete this order</p>
+            <form method="POST" action="{% url 'checkout' %}" id="payment-form">
+                 <!-- Checkout form -->
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-4">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-4">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Address</legend>
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <div class="form-check form-check-inline float-right">
+                         <!-- If user is authenticated, provide info, else sign up/login info -->
+                        {% if user.is_authenticated %}
+                            <p>*You can insert/update delivery info on the profile page*</p>
+                        {% else %}
+                            <label class="form-check-label" for="id-create_account">
+                                <a href="{% url 'account_signup' %}">Create an account</a>
+                                <a href="{% url 'account_login' %}">Login</a>
+                            </label>
+                        {% endif %}                   
+                </fieldset>
+
+                <fieldset class="px-3">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    
+                    <!-- Stripe Elements will go here -->
+                    <div id="card-element" class="mb-3">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    
+                    <!-- Error message container -->
+                    <div id="card-errors" role="alert"></div>
+                    
+                </fieldset>
+
+                 <!-- Buttons to go back and to continue -->
+                <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-black">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span>Back to Bag</span>
+                    </a>
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+                     <!-- Total sum as warning -->
+                    <p class="small text-danger my-0">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>You will be charged £{{ total|floatformat:2 }}</span>
+                    </p>
+
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static '\js\stripe_elements.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Potential header content -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Coaches</h2>
+            <hr class="w-50 mb-4">
+        </div>
+    </div>
+    <div class="row">
+        <!-- Display all unique instructors/coaches -->
+        {% for instructor in instructors %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ MEDIA_URL|add:instructor.image }}" class="card-img-top" alt="{{ instructor.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ instructor.name }}</h5>
+                        <p class="card-text">{{ instructor.introduction }}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col">
+                <p>There was an issue loading the page.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

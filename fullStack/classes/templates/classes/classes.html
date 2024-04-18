@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Header content can go here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Classes</h2>
+            <hr class="w-50 mb-4">
+        </div>
+    </div>
+    <!-- Sorting Dropdown -->
+    <div class="row">
+        <div class="col-md-4 offset-md-4 text-center mb-3">
+            <form method="get" action="">
+                <div class="form-group">
+                    <select class="form-control" onchange="this.form.submit()" name="sort">
+                        <option value="">Sort by</option>
+                        <option value="date_asc" {% if current_sorting == "date_asc" %}selected{% endif %}>Date: Now</option>
+                        <option value="date_desc" {% if current_sorting == "date_desc" %}selected{% endif %}>Date: Later</option>
+                        <option value="price_asc" {% if current_sorting == "price_asc" %}selected{% endif %}>Price: Low to High</option>
+                        <option value="price_desc" {% if current_sorting == "price_desc" %}selected{% endif %}>Price: High to Low</option>
+                        <option value="capacity_asc" {% if current_sorting == "capacity_asc" %}selected{% endif %}>Capacity: Lowest</option>
+                        <option value="capacity_desc" {% if current_sorting == "capacity_desc" %}selected{% endif %}>Capacity: Nearly full!</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% for lesson in lessons %}
+            <div class="row mb-4 align-items-stretch class-container">
+                <!-- Picture Column -->
+                <div class="col-md-4 d-flex justify-content-end">
+                    <img class="class-image img-fluid" src="{{ lesson.instructor_image.url }}" alt="{{ lesson.title }}">
+                </div>
+                
+                <!-- Important Information Column -->
+                <div class="col-md-4">
+                    <h3>{{ lesson.title }}</h3>
+                    <p>{{ lesson.description }}</p>
+                    <p class="font-weight-bold">Run by: {{ lesson.instructor_name }}</p>
+                    <a href="{% url 'class_detail' lesson.id %}" class="book-now-button btn btn-lg rounded-0 text-uppercase py-2" style="min-width: 160px;">View details</a>
+                </div>
+                <!-- Secondary Information Column -->
+                <div class="col-md-4" style="text-align:left;">
+                    <p><b>Date:</b> {{ lesson.date }}</p>
+                    <p><b>Time:</b> {{ lesson.start_time }} - {{ lesson.finish_time }}</p>
+                    <p><b>Duration:</b> {{ lesson.duration }} minutes</p>
+                    <p><b>Location:</b> {{ lesson.location }}</p>
+                    <p><b>Price:</b> ${{ lesson.cost }}</p>
+                    <p><b>Capacity:</b> {{ lesson.current_capacity }}/{{ lesson.max_capacity }}</p>
+                </div>
+            </div>
+            {% if not forloop.last %}
+            <hr class="mb-4" style="width:70%;"> <!-- Add this line under each class except the last one -->
+            {% endif %}
+            {% empty %}
+            <div class="row">
+                <div class="col">
+                    <p>No classes available at the moment.</p>
+                </div>
+            </div>        
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
