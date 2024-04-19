@@ -2,7 +2,7 @@
 
 Full django application is inside the fullstack folder, including database configuration, requirements etc. 
 
-- Note - Not all requirements may be necessary, extras have been listed to be sure.
+Note - Not all requirements may be necessary, extras have been listed to be sure.
 
 To run the app, type in terminal 'python manage.py runserver'.
 
